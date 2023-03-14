@@ -1,6 +1,44 @@
 import 'package:flutter/material.dart';
 
+
 void main () =>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+
+  @override
+
+  Widget build (BuildContext context){
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        left: false,
+        child: Scaffold(
+          body: Center(
+            child: Text("In publishing and graphic design, Lorem ipsum is a placeholder"
+                " text commonly used to demonstrate the visual form of a document or a "
+                "typeface without relying on meaningful content. Lorem ipsum may be used "
+                "as a placeholder before final copy is available.",style: TextStyle(fontSize: 35),),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* void main () =>runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
 
@@ -21,3 +59,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+ */
