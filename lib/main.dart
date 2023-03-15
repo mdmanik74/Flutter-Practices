@@ -1,6 +1,32 @@
 import 'package:flutter/material.dart';
 
+void main () => runApp(MyApp());
 
+class MyApp extends StatelessWidget{
+
+  @override
+
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        child: Scaffold(
+          body: Container(
+            height: 1000,
+            width: 500,
+            decoration: BoxDecoration(color: Colors.red),
+            child: Text("Hellow Bangladesh. My country",style: TextStyle(fontSize: 25,color: Colors.white),),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+// safe area
+/*
 void main () =>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
@@ -28,7 +54,7 @@ class MyApp extends StatelessWidget{
 
 
 
-
+*/
 
 
 
