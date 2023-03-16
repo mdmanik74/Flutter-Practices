@@ -1,5 +1,59 @@
 import 'package:flutter/material.dart';
 
+
+void main () => runApp(Myapp());
+class Myapp extends StatelessWidget{
+  @override
+
+  Widget build (BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(title: Text("This is Column"),),
+          body: Row(
+            children: [
+              Container(
+            height: 200,
+                width: 200,
+                color: Colors.red,
+              ),
+              SizedBox(width: 10,),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.red,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 void main () => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
@@ -23,7 +77,7 @@ class MyApp extends StatelessWidget{
   }
 }
 
-
+*/
 
 // safe area
 /*
