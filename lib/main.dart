@@ -11,20 +11,23 @@ class Myapp extends StatelessWidget{
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(title: Text("This is Column"),),
-          body: Row(
+          body: SingleChildScrollView(
+    scrollDirection: Axis.vertical,
+            child:Column(
             children: [
               Container(
-            height: 200,
-                width: 200,
+            height: 500,
+                width: 300,
                 color: Colors.red,
               ),
-              SizedBox(width: 10,),
+              SizedBox(height: 10,),
               Container(
-                height: 200,
-                width: 200,
+                height: 500,
+                width: 300,
                 color: Colors.red,
               ),
             ],
+            ),
           ),
         ),
       ),
