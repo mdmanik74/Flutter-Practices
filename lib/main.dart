@@ -1,39 +1,101 @@
 import 'package:flutter/material.dart';
 
+void main() => runApp(MyApp());
 
-void main () => runApp(Myapp());
-class Myapp extends StatelessWidget{
+class MyApp extends StatelessWidget{
   @override
 
+  Widget build(BuildContext context){
+  return MaterialApp (debugShowCheckedModeBanner:false, home: Homepage());
+
+}
+}
+
+class Homepage extends StatelessWidget{
+  @override
   Widget build (BuildContext context){
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(title: Text("This is Column"),),
-          body: SingleChildScrollView(
-    scrollDirection: Axis.vertical,
-            child:Column(
-            children: [
-              Container(
-            height: 500,
-                width: 300,
-                color: Colors.red,
-              ),
-              SizedBox(height: 10,),
-              Container(
-                height: 500,
-                width: 300,
-                color: Colors.red,
-              ),
-            ],
+    return SafeArea(
+        child:Scaffold(
+          body: Center(
+            child: Container(
+              height: MediaQuery.of(context).size.height /3,
+              width: MediaQuery.of(context).size.width/ 2,
+              color: Colors.deepOrange,
             ),
           ),
-        ),
-      ),
+        ) ,
+
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+// void main () => runApp(Myapp());
+// class Myapp extends StatelessWidget{
+//   @override
+//
+//   Widget build (BuildContext context){
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: SafeArea(
+//         child: Scaffold(
+//           appBar: AppBar(title: Text("This is Column"),),
+//           body: SingleChildScrollView(
+//     scrollDirection: Axis.vertical,
+//             child:Column(
+//             children: [
+//               Container(
+//             height: 500,
+//                 width: 300,
+//                 color: Colors.red,
+//               ),
+//               SizedBox(height: 10,),
+//               Container(
+//                 height: 500,
+//                 width: 300,
+//                 color: Colors.red,
+//               ),
+//             ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 
 
