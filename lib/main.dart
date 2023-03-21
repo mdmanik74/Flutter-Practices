@@ -1,6 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_swipe/liquid_swipe.dart';
 
+void main() =>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Card and Gridview"),),
+      body: const Center(
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10.0),
+                bottomLeft: Radius.circular(10.0)),
+            color: Colors.green,),
+          ),
+      ).
+          child: Container(
+            height: 100,
+            width: 100,
+            color: Colors.red,
+          ),
+        ),
+      ),
+      ),
+    );
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
@@ -23,7 +74,7 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-
+*/
 
 
 
