@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget{
             clipBehavior: Clip.none,
             children: [
               Container(
-                height: 200,
-                width: 200,
+
                 color: Colors.deepOrange,
+                child:Image.asset("image/download.png"),
               ),
               Positioned(
                 bottom: -50,
