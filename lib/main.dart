@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:codes/SidebarMenu.dart';
 
 void main() =>runApp(MyApp());
 
@@ -8,28 +9,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text('Add Back Button'),),
-        body: Stack(
-          children: [
-            Container(
-              color: Colors.white,
-            ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    height: 70,
-                  ),
-                  const Center(
-                    child: Text('This is test row.'),
-                  ),
-                  
-                ],
-              ),
-            )
-          ],
+        drawer:SidebarMenu(),
+        appBar: AppBar(
+          title: Text('SideBar'),
+          backgroundColor: Colors.red,
         ),
       ),
+
     );
   }
 }
