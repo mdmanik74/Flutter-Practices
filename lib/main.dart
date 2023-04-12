@@ -1,6 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:codes/SidebarMenu.dart';
 
+void main() =>runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      appBar: AppBar(title: Text('Expanded Widget'),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+          flex: 1,
+            child: Container(
+              color: Colors.amber,
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.red,
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.green,
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.white,
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.pink,
+            ),
+          ),
+        ],
+      ),
+    ),
+    );
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 void main() =>runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -19,7 +80,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+*/
 
 
 
