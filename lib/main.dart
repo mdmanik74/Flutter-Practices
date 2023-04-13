@@ -1,4 +1,78 @@
 import 'package:flutter/material.dart';
+void main() =>runApp(Myapp());
+
+class Myapp extends StatelessWidget{
+
+  @override
+  Widget build (BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+  home: DefaultTabController(
+    length: 3,
+    child: Scaffold(
+      appBar: AppBar(title: Text('Tab Bar Widget'),
+      bottom: TabBar(
+        tabs: [
+          Tab(
+            icon: Icon(Icons.cloud_outlined),
+          ),
+          Tab(
+            icon: Icon(Icons.message),
+          ),
+          Tab(
+            icon: Icon(Icons.search),
+          )
+        ],
+      ),
+      ),
+      body: TabBarView(
+        children: [
+          Center(
+            child: Text('It is Cloud Here'),
+          ),
+          Center(
+            child: Text('It is Message Here'),
+          ),
+          Center(
+            child: Text('It is SearchBox Here'),
+          ),
+        ],
+      ),
+    ),
+  ),
+    );
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
 import 'package:codes/one.dart';
 import 'package:codes/two.dart';
 void main() =>runApp(Myapp());
@@ -29,7 +103,7 @@ class Myapp extends StatelessWidget{
   }
 }
 
-
+*/
 
 
 
