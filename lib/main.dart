@@ -1,7 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:codes/MyStatefulWidget.dart';
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  static const String _title = 'Flutter Code Sample';
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: _title,
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+import 'package:flutter/material.dart';
+
+import 'package:codes/homescreen.dart';
 
 void main() =>runApp(MyApp());
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+        appBar: AppBar(title: Text('List To Details Page Animation Hero'),
+    ),
+    ),
+    );
+}
+  }
+*/
 
+/*
+void main() =>runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -53,7 +111,7 @@ class MyApp extends StatelessWidget {
 
 
 
-
+*/
 
 
 
