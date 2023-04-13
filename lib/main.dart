@@ -1,4 +1,91 @@
 import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            snap: false,
+            pinned: true,
+            floating: false,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              title: Text("Ok",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+              ),
+            ),
+            expandedHeight: 200,
+            backgroundColor: Colors.pinkAccent[400],
+            leading: IconButton(
+              icon: Icon(Icons.menu),
+              tooltip: 'Menu',
+              onPressed: () {},
+            )
+            actions: [
+              IconButton(
+                icon: Icon(Icons.notifications),
+                tooltip: 'Notifaction Icon',
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.shopping_cart),
+                tooltip: 'Cart Icon',
+                onPressed: () {},
+              ),
+            ],
+          ),
+          SliverList(delegate:
+              SliverChildBuilderDelegate(
+                  (context, index) =>ListTile(
+                    tileColor: (index%2==0) ? Colors.green[50],
+                    title: Center(
+                      child: Text('$index', style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 15,
+                        color: Colors.greenAccent[400],
+                      ),),
+                    ),
+                  )
+              ),
+          ),
+        ],
+      ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
 void main() =>runApp(Myapp());
 
 class Myapp extends StatelessWidget{
@@ -45,7 +132,7 @@ class Myapp extends StatelessWidget{
 }
 
 
-
+*/
 
 
 
