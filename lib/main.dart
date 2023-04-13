@@ -1,18 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:codes/MyStatefulWidget.dart';
-void main() => runApp(const MyApp());
+import 'package:codes/one.dart';
+import 'package:codes/two.dart';
+void main() =>runApp(Myapp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  static const String _title = 'Flutter Code Sample';
+class Myapp extends StatelessWidget{
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
+  Widget build (BuildContext context){
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: _title,
-      home: MyStatefulWidget(),
+      home: DefaultTabController(
+        length: 2,
+        child:Scaffold(
+          appBar: AppBar(
+            title: Text('Hellow World'),
+            bottom: TabBar(tabs: [
+              Tab(icon:Icon(Icons.camera),),
+              Tab(icon:Icon(Icons.message),),
+            ],),
+          ),
+          body: TabBarView(children: [
+
+          One(),
+          Two(),
+          ],),
+      )),
     );
   }
 }
@@ -32,6 +44,42 @@ class MyApp extends StatelessWidget {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
+import 'package:codes/MyStatefulWidget.dart';
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  static const String _title = 'Flutter Code Sample';
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: _title,
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+*/
 
 
 
