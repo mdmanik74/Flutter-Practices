@@ -1,5 +1,101 @@
 import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: FractionalOffset(0.0, 0.0),
+                end: FractionalOffset(1.0, 1.0),
+                colors: <Color>[
+                  Color.fromARGB(255, 27, 216, 46),
+                  Color.fromARGB(255, 158, 173, 28),
+                ],
+                stops: <double>[0.0, 1.0],
+
+              ),
+            ),
+          ),
+          iconTheme: const IconThemeData(
+            color: Colors.white,
+          ),
+          backgroundColor: Colors.transparent,
+          title: const Text(
+            'AppBar Dashbaord',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        /*
+        appBar: AppBar(title: const Text('AppBar Dashboard',
+          style: TextStyle(color: Colors.white),
+        ),
+          backgroundColor: Color(0x7FFF0000),
+        ),
+        backgroundColor: Colors.green.shade100,
+
+         */
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,7 +133,7 @@ class MyApp extends StatelessWidget {
 
 
 
-
+*/
 
 
 
