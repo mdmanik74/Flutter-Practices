@@ -1,5 +1,70 @@
 import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+ return MaterialApp(
+   debugShowCheckedModeBanner: false,
+   home: Scaffold(
+     appBar: AppBar(title: Text('Gradient Color In Appbar & Container Flutter'),
+       flexibleSpace: Container(
+         decoration: BoxDecoration(
+           gradient: LinearGradient(
+               begin: Alignment.center,
+               end: Alignment.bottomCenter,
+               tileMode: TileMode.repeated,
+               colors: [Colors.green,Colors.orangeAccent]
+           ),
+         ),
+       ),
+
+     ),
+     body: Container(
+       decoration: BoxDecoration(
+         gradient: LinearGradient(
+           begin: Alignment.center,
+           end: Alignment.bottomCenter,
+           tileMode: TileMode.repeated,
+           colors: [Colors.pinkAccent,Colors.deepOrange]
+         ),
+       ),
+     ),
+   ),
+ );
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -67,15 +132,7 @@ class MyApp extends StatelessWidget{
 
 
 
-
-
-
-
-
-
-
-
-
+*/
 
 
 
