@@ -1,4 +1,40 @@
 import 'package:flutter/material.dart';
+import 'Alertdialogs.dart';
+void main() =>runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+      appBar: AppBar(title: Text("Alert Dialog Sample"),),
+      body: const Center(
+        child: Alertdialogs(),
+      ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
@@ -34,7 +70,7 @@ class MyApp extends StatelessWidget{
 
 
 
-
+*/
 
 
 
