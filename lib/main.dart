@@ -1,13 +1,34 @@
-
-
-
-
-
-
-
-
-
-
+import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+      appBar: AppBar(title: Text('Simple Alert Dialog'),
+      ),
+        body: Center(
+      child: ElevatedButton(
+        onPressed: () {
+          showDialog(context: context,
+              builder: (context){
+            return AlertDialog(
+              title: Text("Alert"),
+              content: Text("Hellow"),
+            );
+              });
+        },
+        child: Text('My Button'),
+    style: ButtonStyle(
+    minimumSize: MaterialStateProperty.all(const Size(200, 40)),
+    ),
+      ),
+        ),
+      ),
+    );
+  }
+  }
 
 
 
