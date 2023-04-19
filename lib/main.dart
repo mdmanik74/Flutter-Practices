@@ -1,3 +1,34 @@
+import 'package:flutter/material.dart';
+
+void main() =>runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Curved Navigation Bar"),backgroundColor: Colors.black,),
+        backgroundColor: Colors.red.shade100,
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import 'dart:html';
 
 import 'package:flutter/material.dart';
@@ -45,3 +76,6 @@ _pickImageFromCamera() async {
     );
   }
 }
+
+
+ */
