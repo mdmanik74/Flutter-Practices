@@ -1,81 +1,53 @@
 import 'package:flutter/material.dart';
-
-void main() =>runApp(MyApp());
-class MyApp extends StatelessWidget{
-  @override
-
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("Curved Navigation Bar"),backgroundColor: Colors.black,),
-        backgroundColor: Colors.red.shade100,
+class DataTableDemo extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Data Tables'),
       ),
+
+
     );
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-import 'dart:html';
-
-import 'package:flutter/material.dart';
-import 'dart:io';
-import 'package:image_pickers/image_pickers.dart';
-void main() =>runApp(MyApp());
-class MyApp extends StatelessWidget
-File _cameraImage;
-// This funcion will helps you to pick and Image from Camera
-_pickImageFromCamera() async {
-  File image = await  ImagePickers.pickerPaths(
-    galleryMode: GalleryMode.video,
-    selectCount: 5,
-  );
-
-  setState(() {
-    _cameraImage = image;
-  });
-}
+class MyStatelessWidget extends StatelessWidget{
+  const MyStatelessWidget ({super.key});
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-      appBar: AppBar(title: Text('Image Picker',),),
-        body: Column(
-          children: [
-            Container(
-              height: 500,
-              width: double.infinity,
-              color: Colors.red.shade100,
-            ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FloatingActionButton(onPressed: () {}, child: Icon(Icons.camera),),
-                SizedBox(width: 20,),
-                FloatingActionButton(onPressed: (){}, child: Icon(Icons.photo_library),),
-              ],
-            )
-          ],
+  Widget build(BuildContext context){
+    return DataTable(
+    columns: [
+      DataColumn(label:Expanded(
+        child: Text(
+          "Name", style: TextStyle(fontSize: 30, fontStyle: FontStyle.italic),
         ),
       ),
+      ),
+      DataColumn(
+        label: Expanded(
+          child: Text(
+            'Role',
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
+        ),
+      ),
+    ],
+      rows: const [
+        DataRow(
+          cells: [
+            DataCell(Text('Manik')),
+            DataCell(Text('19')),
+            DataCell(Text('Student')),
+          ]
+        ),
+        DataRow(
+          cells: <DataCell>[
+            DataCell(Text('Janine')),
+            DataCell(Text('43')),
+            DataCell(Text('Professor')),
+          ],
+        ),
+      ],
     );
   }
 }
-
-
- */
