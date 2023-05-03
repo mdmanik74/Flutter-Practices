@@ -1,3 +1,5 @@
+
+/*
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SnackBarDemo());
@@ -49,19 +51,7 @@ class SnackBarPage extends StatelessWidget {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ */
 
 /*
 import 'package:flutter/material.dart';
