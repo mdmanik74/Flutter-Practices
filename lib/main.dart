@@ -1,4 +1,42 @@
 import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
+ class MyApp extends StatelessWidget {
+   @override
+   Widget build(BuildContext context){
+     return MaterialApp(
+       debugShowCheckedModeBanner: false,
+       home: Scaffold(
+         appBar: AppBar(title: Text('Rich Text Flutter'),),
+         body: Center(
+           child: RichText(text: TextSpan(
+             text: 'Donot have an account ? ',style: TextStyle(color: Colors.black,fontSize: 18),
+             children: [
+               TextSpan(
+                 text: 'Sign Up',
+                 style: TextStyle(color: Colors.deepOrange,fontSize: 18),
+               ),
+             ]
+           ),),
+         ),
+       ),
+     );
+   }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
 
 void main() => runApp(const SliderApp());
 
@@ -8,9 +46,10 @@ class SliderApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorSchemeSeed: const Color(0xff6750a4),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       home: const SliderExample(),
     );
@@ -52,19 +91,7 @@ class _SliderExampleState extends State<SliderExample> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 /*
 import 'package:flutter/material.dart';
