@@ -1,4 +1,64 @@
 import 'package:flutter/material.dart';
+void main() =>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Drop Down Option',
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+      ),
+      home: const HomePage()
+    );
+  }
+}
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  // define a list of options for the dropdown
+  final List<String> _animals = ["Dog", "Cat", "Crocodile", "Dragon"];
+
+  // the selected value
+  String? _selectedAnimal;
+  @override
+    Widget build (BuildContext context){
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Drop Down Button'),
+    ),
+    body: Center(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+        width: 300,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          borderRadius: BorderRadius.circular(30)),
+        child: DropdownButton(
+          value: _selectedAnimal,
+          onChanged: (value){
+            setState(() {
+              _selectedAnimal = vlue;
+            });
+          },
+        ),
+        ),
+      ),
+    ),
+  );}
+}
+
+
+
+
+/*
+import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
  class MyApp extends StatelessWidget {
    @override
@@ -22,19 +82,7 @@ void main() => runApp(MyApp());
      );
    }
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
+ */
 /*
 import 'package:flutter/material.dart';
 
