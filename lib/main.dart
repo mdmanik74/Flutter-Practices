@@ -1,48 +1,60 @@
 import 'package:flutter/material.dart';
-void main(){
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget{
-  var Selected ='Choose';
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  static const String _title = 'Flutter Code Sample';
+
   @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              Selected, style: TextStyle(fontSize: 30),
-            ),
-            DropdownButton(
-                iconSize: 20,
-                items:[
-              DropdownMenuItem(value: 'Easy', child: Text('Easy'),),
-              DropdownMenuItem(
-                value: 'Explantion', child: Text('Explanation'),
-              ),
-            ], onChanged: (val){
-              setState(){
-                Selected= val!;
-              }
-            })
-          ],
-        ),
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const MyStatefulWidget(),
       ),
     );
   }
 }
 
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key});
 
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
 
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  List<int> items = List<int>.generate(100, (int index) => index);
 
-
-MediaQuery(
-data: MediaQueryData(),
-child: MaterialApp()
-)
-
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: items.length,
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      itemBuilder: (BuildContext context, int index) {
+        return Dismissible(
+          background: Container(
+            color: Colors.green,
+          ),
+          key: ValueKey<int>(items[index]),
+          onDismissed: (DismissDirection direction) {
+            setState(() {
+              items.removeAt(index);
+            });
+          },
+          child: ListTile(
+            title: Text(
+              'Item ${items[index]}',
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
 
 
 
