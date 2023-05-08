@@ -1,4 +1,53 @@
 import 'package:flutter/material.dart';
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  var Selected ='Choose';
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              Selected, style: TextStyle(fontSize: 30),
+            ),
+            DropdownButton(
+                iconSize: 20,
+                items:[
+              DropdownMenuItem(value: 'Easy', child: Text('Easy'),),
+              DropdownMenuItem(
+                value: 'Explantion', child: Text('Explanation'),
+              ),
+            ], onChanged: (val){
+              setState(){
+                Selected= val!;
+              }
+            })
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+MediaQuery(
+data: MediaQueryData(),
+child: MaterialApp()
+)
+
+
+
+
+/*
+import 'package:flutter/material.dart';
 void main() =>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
@@ -53,10 +102,7 @@ class _HomePageState extends State<HomePage> {
     ),
   );}
 }
-
-
-
-
+*/
 /*
 import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
