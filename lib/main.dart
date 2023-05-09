@@ -28,6 +28,58 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+bool _value=false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Switch in flutter'),
+      ),
+     backgroundColor: _value==false?Colors.red:Colors.black38,
+      body: Center(
+        child: Switch(value: _value,
+        onChanged: (val){
+          setState(() {
+            _value=val;
+            print(_value);
+          });
+        }),
+        ),
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Create a Checkbox',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Create a Checkbox'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +106,7 @@ body: Column(
     );
   }
 }
-
+*/
 
 /*
 import 'package:flutter/material.dart';
