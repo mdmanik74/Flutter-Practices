@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Create a Checkbox',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -27,34 +28,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool _checkbox = false;
-  bool _checkboxListTile = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Create a Checkbox'),
+        title: const Text('Animated crossfade flutter'),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Checkbox(
-                  value: _checkbox,
-                  onChanged: (value) {
-                    setState(() {
-                      _checkbox = !_checkbox;
-                    });
-                  },
-                ),
-                Text('I am true now'),
-              ],
-            ),
+body: Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Center(
+      child: AnimatedCrossFade(
+        firstChild: Container(
+          color: Colors.deepOrange,
+          child: Center(child: ElevatedButton(onPressed: (){}, child: null,),),
+        ), secondChild: Center(
 
-          ],
-        ),
       ),
+      ),
+    ),
+  ],
+),
+
     );
   }
 }
