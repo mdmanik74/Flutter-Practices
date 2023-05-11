@@ -11,6 +11,142 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Animated Container in Flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Animated Container in Flutter'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+bool _value = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Animated Container in Flutter'),
+      ),
+ floatingActionButton: FloatingActionButton(onPressed: (){
+
+   setState(() {
+     _value=!_value;
+   });
+ }),
+      body: Center(
+        child: AnimatedContainer(
+          height: _value ==false?150:350,
+          width: _value==false?150:300,
+          color:_value==false?Colors.red:Colors.yellowAccent,
+          duration: Duration(seconds:1),
+        ),
+      ),
+
+    );
+  }
+}
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
+
+void main() => runApp(const SwitchApp());
+
+class SwitchApp extends StatelessWidget {
+  const SwitchApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+          useMaterial3: true, colorSchemeSeed: const Color(0xff6750a4)),
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Switch Sample')),
+        body: const Center(
+          child: SwitchExample(),
+        ),
+      ),
+    );
+  }
+}
+
+class SwitchExample extends StatefulWidget {
+  const SwitchExample({super.key});
+
+  @override
+  State<SwitchExample> createState() => _SwitchExampleState();
+}
+
+class _SwitchExampleState extends State<SwitchExample> {
+  bool light0 = true;
+  bool light1 = true;
+  bool light2 = true;
+
+  final MaterialStateProperty<Icon?> thumbIcon =
+  MaterialStateProperty.resolveWith<Icon?>(
+        (Set<MaterialState> states) {
+      // Thumb icon when the switch is selected.
+      if (states.contains(MaterialState.selected)) {
+        return const Icon(Icons.check);
+      }
+      return const Icon(Icons.close);
+    },
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Switch(
+          value: light0,
+          onChanged: (bool value) {
+            setState(() {
+              light0 = value;
+            });
+          },
+        ),
+        Switch(
+          thumbIcon: thumbIcon,
+          value: light1,
+          onChanged: (bool value) {
+            setState(() {
+              light1 = value;
+            });
+          },
+        ),
+      ],
+    );
+  }
+}
+
+*/
+
+/*
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Create a Checkbox',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -48,7 +184,7 @@ bool _value=false;
     );
   }
 }
-
+*/
 /*
 import 'package:flutter/material.dart';
 
