@@ -15,6 +15,128 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const MyHomePage(title: 'ExpansionTile widget in flutter'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  bool _value = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ExpansionTile widget in flutter'),
+      ),
+      body: Column(
+        children: [
+          ExpansionTile(title: Text('ExpansionTile widget in flutter'),
+          backgroundColor: Colors.white,
+          subtitle: Text('This is Subtitle'),
+            leading: Icon(Icons.tab),
+            trailing: Icon(Icons.arrow_downward),
+            children: [
+              Container(
+                height: 200,
+                color: Colors.yellowAccent,
+              ),
+            ],
+          ),
+          ExpansionTile(title: Text('ExpansionTile widget in flutter'),
+            backgroundColor: Colors.white,
+            subtitle: Text('This is Subtitle'),
+            leading: Icon(Icons.tab),
+            trailing: Icon(Icons.arrow_downward),
+            children: [
+              Container(
+                height: 200,
+                color: Colors.red,
+              ),
+            ],
+          ),
+        ],
+      ),
+
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Animated Container in Flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Animated Container in Flutter'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  bool _value = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Animated Container in Flutter'),
+      ),
+      body: Column(
+        children: [
+          ExpansionTile(title: Text('Please Click Here'),
+            subtitle: ,
+
+          ),
+        ],
+      ),
+
+    );
+  }
+}
+*/
+/*
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Animated Container in Flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: const MyHomePage(title: 'Animated Container in Flutter'),
     );
   }
@@ -53,11 +175,7 @@ bool _value = false;
     );
   }
 }
-
-
-
-
-
+*/
 /*
 import 'package:flutter/material.dart';
 
