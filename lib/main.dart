@@ -1,4 +1,55 @@
 import 'package:flutter/material.dart';
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter – Tooltip Widget',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Flutter – Tooltip Widget'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  bool _value = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter – Tooltip Widget'),
+      ),
+      body: Center(
+        child: Tooltip(
+          message: 'This example show a basic Tooltip which has a Text as child. message contains your label to be shown by the tooltip when the child that Tooltip wraps is hovered over on web or desktop. On mobile, the tooltip is shown when the widget is long pressed.',
+          height: 50,
+          textStyle: TextStyle(fontSize: 30,color: Colors.black),
+          child: Text('Please Here Mouse Icon'),
+
+        ),
+      ),
+
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
+*/
 /*
 import 'package:flutter/material.dart';
 
