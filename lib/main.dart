@@ -10,6 +10,68 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'BackdropFilter in flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'BackdropFilter in flutter'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  bool _value = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('BackdropFilter in flutter'),
+      ),
+      body: Center(
+        child: Stack(
+          children: <Widget>[
+            Image.network("https://tile.loc.gov/image-services/iiif/service:pnp:highsm:13600:13696/full/pct:12.5/0/default.jpg"),
+            Positioned.fill(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                child: Container(
+                  color: Colors.black.withOpacity(0),
+                ),
+              ),
+            ),
+          ],
+        )
+      ),
+
+    );
+  }
+}
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter – Tooltip Widget',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -47,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
+*/
 /*
 import 'package:flutter/material.dart';
 
