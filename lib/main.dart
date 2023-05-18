@@ -1,4 +1,47 @@
 import 'package:flutter/material.dart';
+final Color darkBlue= Color.fromARGB(255, 18, 32, 47);
+void main() =>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: MyWidget(),
+      ),
+    );
+  }
+}
+
+
+class MyWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Center(
+      child: Container(
+        width: 300,
+        height: 300,
+        color: Colors.white,
+        child: Stack(
+          children: [
+            Positioned(
+        left: 0,
+            top: 0,
+            child:Transform.rotate(angle: 1,
+        child: Container(color: Colors.red,width: 250, height: 250,),
+        ),
+
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+/*
+import 'package:flutter/material.dart';
 
 /// Flutter code sample for [showDatePicker].
 
@@ -100,7 +143,7 @@ class _DatePickerExampleState extends State<DatePickerExample>
   }
 }
 
-
+*/
 
 
 /*
