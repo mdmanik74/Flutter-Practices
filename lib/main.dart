@@ -1,4 +1,112 @@
 import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+/// main application widget
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'Flutter Application';
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const MyStatefulWidget(),
+      ),
+    );
+  }
+}
+
+/// stateful widget that the main application instantiates
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+enum Fruit { apple, banana }
+
+/// private State class that goes with MyStatefulWidget
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  Fruit? _fruit = Fruit.apple;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            title: const Text('Apple'),
+            leading: Radio<Fruit>(
+              value: Fruit.apple,
+              groupValue: _fruit,
+              onChanged: (Fruit? value) {
+                setState(() {
+                  _fruit = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: const Text('Banana'),
+            leading: Radio<Fruit>(
+              value: Fruit.banana,
+              groupValue: _fruit,
+              onChanged: (Fruit? value) {
+                setState(() {
+                  _fruit = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: const Text('Banana'),
+            leading: Radio<Fruit>(
+              value: Fruit.banana,
+              groupValue: _fruit,
+              onChanged: (Fruit? value) {
+                setState(() {
+                  _fruit = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: const Text('Banana'),
+            leading: Radio<Fruit>(
+              value: Fruit.banana,
+              groupValue: _fruit,
+              onChanged: (Fruit? value) {
+                setState(() {
+                  _fruit = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: const Text('Banana'),
+            leading: Radio<Fruit>(
+              value: Fruit.banana,
+              groupValue: _fruit,
+              onChanged: (Fruit? value) {
+                setState(() {
+                  _fruit = value;
+                });
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+/*
+import 'package:flutter/material.dart';
 final Color darkBlue= Color.fromARGB(255, 18, 32, 47);
 void main() =>runApp(MyApp());
 
@@ -9,6 +117,7 @@ class MyApp extends StatelessWidget{
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(title: Text('Flutter Transform Widget'),),
         body: MyWidget(),
       ),
     );
@@ -40,6 +149,9 @@ class MyWidget extends StatelessWidget{
     );
   }
 }
+*/
+
+
 /*
 import 'package:flutter/material.dart';
 
