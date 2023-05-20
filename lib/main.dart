@@ -3,6 +3,45 @@ import 'package:flutter/material.dart';
 void main() =>runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
+  var isVisible = true;
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(primarySwatch: Colors.indigo),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Dynamically Hide and Unhide Widgets in Flutter'),),
+        body: Center(
+            child: Column(children: [
+              Visibility(visible: isVisible,
+                child:Container(
+                  margin: const EdgeInsets.all(10.0),
+                  color: Colors.amber,
+                  width: 200.0,
+                  height: 200.0,
+                ),),
+              ElevatedButton(onPressed: () {
+                setState(() {
+                  isVisible = !isVisible;
+                });
+              },
+                  child: Text(' Elevated Button'))],)
+        ),
+      ),
+    );
+  }
+
+  void setState(Null Function() param0) {}
+}
+
+
+
+/*
+import 'package:flutter/material.dart';
+
+void main() =>runApp(MyApp());
+class MyApp extends StatelessWidget{
+  @override
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -64,3 +103,5 @@ class MyApp extends StatelessWidget{
     );
   }
 }
+
+*/
