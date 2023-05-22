@@ -1,3 +1,98 @@
+
+import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+      appBar: AppBar(title: Text('Login Page'),),
+        body: const MyStatefulWidget(),
+      ),
+    );
+  }
+}
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  @override
+Widget build(BuildContext context){
+    return Padding(
+        padding:const EdgeInsets.all(10),
+    child: ListView(
+      children: [
+        Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(10),
+          child: Text('Login Page Site',style: TextStyle(color: Colors.green,fontWeight: FontWeight.w500,fontSize: 30),),
+        ),
+        Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'Sign in',
+              style: TextStyle(fontSize: 20),
+            )
+        ),
+        Container(
+          padding: EdgeInsets.all(10),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'User Name',
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+          child: TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Password',
+            ),
+          ),
+        ),
+        TextButton(onPressed: (){
+
+        }, child: Text('Forget Password',style: TextStyle(color: Colors.red),),),
+        Container(
+          height: 50,
+          padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+          child: ElevatedButton(
+            child: Text('Login'),
+            onPressed: (){
+
+            },
+          ),
+        ),
+      Row(
+        children: <Widget>[
+          const Text('Does not have account?'),
+          TextButton(
+            child: const Text(
+              'Sign in',
+              style: TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              //signup screen
+            },
+          ),
+      ],
+        mainAxisAlignment: MainAxisAlignment.center,
+      ),
+      ],
+    ));
+  }
+}
+
+
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -129,6 +224,10 @@ class MyApp extends StatelessWidget{
   }
 }
 
+*/
+
+ */
+/*
 
 class AlphabetWidget extends StatelessWidget {
   @override
