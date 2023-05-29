@@ -1,5 +1,61 @@
 import 'package:flutter/material.dart';
 
+void main()=> runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('BottomApp Bar Example'),),
+        body: Center(
+          child: Text('Flutter Bottom App Bar Design',style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold,fontSize: 20.0),),
+        ),
+        bottomNavigationBar:BottomAppBar(
+          child: new Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Icon(Icons.home),
+                onPressed: (){},),
+              IconButton(
+                icon: Icon(Icons.access_alarm),
+                onPressed: (){},),
+              IconButton(
+                icon: Icon(Icons.add_a_photo),
+                onPressed: (){},),
+              IconButton(
+                icon: Icon(Icons.exit_to_app,color: Colors.red,),
+                onPressed: (){},),
+            ],
+          ),
+          shape: CircularNotchedRectangle(),
+        ),
+        floatingActionButton: FloatingActionButton.extended (
+          elevation: 4.0,
+          icon: const Icon(Icons.add),
+          label: const Text('Add a task'),
+          onPressed: () {},
+        ),
+
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*
+import 'package:flutter/material.dart';
+
 void main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
@@ -40,7 +96,7 @@ class MyHomePage extends StatelessWidget{
     );
   }
 }
-
+*/
 /*
 import 'package:flutter/material.dart';
 
