@@ -1,5 +1,69 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'o7planning',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold (
+        appBar: AppBar(
+          title: Text("Banner Example"),
+        ),
+        body:  Banner (
+          message: 'Offer 20% off',
+          location: BannerLocation.topStart,
+          color: Colors.red,
+          child: Container(
+            height: 150,
+            width: double.infinity,
+            color: Colors.lightGreen,
+            child: Padding (
+              padding: EdgeInsets.all(16),
+              child: Row (
+                children: [
+                  Image.network (
+                      "https://raw.githubusercontent.com/o7planning/rs/master/flutter/fast_food.png"
+                  ),
+                  SizedBox(width: 10),
+                  Column (
+                    children: [
+                      Text("Fast Food",style: TextStyle(fontSize: 30, color: Colors.blue)),
+                      SizedBox(height: 10),
+                      Text("Description ....", style: TextStyle(fontStyle: FontStyle.italic))
+                    ],
+                  )
+                ],
+              ),
+
+            ),
+
+          ),
+        )
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
+
 void main() =>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
@@ -21,15 +85,13 @@ class MyHomePage extends StatelessWidget{
       ),
       body: Container(
         padding: EdgeInsets.all(16),
-        child: Align(
-          alignment: Alignment.center,
           child: Banner(
             message: 'offer 20% off',
             location: BannerLocation.topEnd,
             color: Colors.red,
             child: Container(
-              height: 300,
-              width: 300,
+              height: 100,
+              width: 150,
               child:
               Image.network(
                 'https://raw.githubusercontent.com/o7planning/rs/master/flutter/fast_food.png',
@@ -37,12 +99,12 @@ class MyHomePage extends StatelessWidget{
               ),
             ),
           ),
-        ),
+        color: Colors.green,
       ),
     );
   }
 }
-
+*/
 /*
 import 'package:flutter/material.dart';
 
