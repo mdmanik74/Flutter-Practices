@@ -1,5 +1,51 @@
 import 'package:flutter/material.dart';
 
+void main() =>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      theme:  ThemeData(primarySwatch:Colors.cyan),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Banner'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: Align(
+          alignment: Alignment.center,
+          child: Banner(
+            message: 'offer 20% off',
+            location: BannerLocation.topEnd,
+            color: Colors.red,
+            child: Container(
+              height: 300,
+              width: 300,
+              child:
+              Image.network(
+                'https://raw.githubusercontent.com/o7planning/rs/master/flutter/fast_food.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -60,6 +106,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+*/
 /*
 import 'package:flutter/material.dart';
 
