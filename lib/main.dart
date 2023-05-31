@@ -1,62 +1,105 @@
 import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
-void main(){
-  runApp(new MaterialApp(
-    home: new MyApp(),
-  ));
+
+void main() {
+  runApp(MyApp());
 }
 
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-
-  Future<Widget> loadFromFuture() async {
-
-    // <fetch data from server. ex. login>
-
-    return Future.value(new AfterSplash());
-  }
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
-        navigateAfterFuture: loadFromFuture(),
-        title: new Text('Welcome In SplashScreen',
-          style: new TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0
-          ),),
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
-        backgroundColor: Colors.white,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: ()=>print("Flutter Egypt"),
-        loaderColor: Colors.red
+    return MaterialApp(
+      title: 'Title of Application',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
     );
   }
 }
 
-class AfterSplash extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return MyHomePageState();
+  }
+
+}
+
+class MyHomePageState extends State<MyHomePage> {
+  int selectedIndex = 0;
+  Widget _myContacts = MyContacts();
+  Widget _myEmails = MyEmails();
+  Widget _myProfile = MyProfile();
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-          title: new Text("Welcome In SplashScreen Package"),
-          automaticallyImplyLeading: false
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("BottomNavigationBar Example"),
       ),
-      body: new Center(
-        child: new Text("Done!",
-          style: new TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30.0
-          ),),
-
+      body:  this.getBody(),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: this.selectedIndex,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.contacts),
+            title: Text("Contacts"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mail),
+            title: Text("Emails"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            title: Text("Profile"),
+          )
+        ],
+        onTap: (int index) {
+          this.onTapHandler(index);
+        },
       ),
     );
+  }
+
+  Widget getBody( )  {
+    if(this.selectedIndex == 0) {
+      return this._myContacts;
+    } else if(this.selectedIndex==1) {
+      return this._myEmails;
+    } else {
+      return this._myProfile;
+    }
+  }
+
+  void onTapHandler(int index)  {
+    this.setState(() {
+      this.selectedIndex = index;
+    });
+  }
+}
+
+class MyContacts extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text("Contacts"));
+  }
+}
+
+class MyEmails extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text("Emails"));
+  }
+}
+
+class MyProfile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text("Profile"));
   }
 }
 /*
