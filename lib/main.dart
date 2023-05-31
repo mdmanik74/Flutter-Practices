@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+
 
   @override
   State<StatefulWidget> createState() {
@@ -42,26 +42,28 @@ class MyHomePageState extends State<MyHomePage> {
       ),
       body:  this.getBody(),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
         currentIndex: this.selectedIndex,
+        showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.contacts),
-            title: Text("Contacts"),
+            label: ("Contacts"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.mail),
-            title: Text("Emails"),
+            label: ("Emails"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text("Profile"),
+            label: ("Profile"),
           )
         ],
         onTap: (int index) {
-          this.onTapHandler(index);
+          this.setState(() {
+            this.selectedIndex = index;
+          });
         },
-      ),
+      )
     );
   }
 
