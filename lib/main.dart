@@ -20,11 +20,12 @@ class MyHomePage extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(title: Text('Flutter Center Example'),),
-      body: Center(
-        child:Icon(
-          Icons.place,
-          size: 128,
-          color: Colors.redAccent,
+      body: Align(
+        alignment: Alignment.bottomRight,
+        heightFactor: 2.0,
+        child: ElevatedButton(
+          child: Text('Button'),
+          onPressed: (){},
         ),
       ),
     );
