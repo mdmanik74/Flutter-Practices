@@ -1,5 +1,48 @@
 import 'package:flutter/material.dart';
 
+void main() =>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.orange),
+
+      home: MyhomePage(),
+    );
+  }
+}
+
+class MyhomePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text('Flutter Column Example'),),
+      body: Center(
+          child: Column (
+              children: [
+                ElevatedButton(child: Text("Button 1"), onPressed:(){}),
+                Icon(Icons.ac_unit, size: 48, color: Colors.blue),
+                ElevatedButton(
+                    child: Text("Button 2"),
+                    onPressed:(){},
+                    style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all(Size.square(70))
+                    )
+                ),
+                ElevatedButton(child: Text("Very Long Button 3"), onPressed:(){}),
+              ]
+          )
+      ),
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -82,3 +125,5 @@ class MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+ */
