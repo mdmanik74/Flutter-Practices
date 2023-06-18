@@ -9,6 +9,51 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.cyan,
       ),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Container Widget',style: TextStyle(color: Colors.white),),),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Container(
+
+      height: 200,
+      width: 200.0,
+      alignment: Alignment.center,
+        margin: EdgeInsets.all(50.0),
+      padding: EdgeInsets.all(40.0),
+      decoration: BoxDecoration(
+        color: Colors.red,
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: Colors.black,
+          width: 10.0,
+        ),
+      ),
+      transform: Matrix4.rotationX(.5),
+    );
+  }
+}
+
+
+
+/*
+import 'package:flutter/material.dart';
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
      home: Scaffold(
        appBar: AppBar(title: Text('Build Using Stateful Widget',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),),
        body: MyHomePage(),
@@ -50,3 +95,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+*/
