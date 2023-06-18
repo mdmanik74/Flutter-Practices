@@ -10,6 +10,43 @@ class MyApp extends StatelessWidget{
         primarySwatch: Colors.cyan,
       ),
       home: Scaffold(
+        appBar: AppBar(title: Text('Column Widget',style: TextStyle(color: Colors.white),),),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+
+children: [
+  Text('Hello Bangladesh'),
+
+],
+
+    );
+  }
+}
+
+
+
+/*
+import 'package:flutter/material.dart';
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: Scaffold(
         appBar: AppBar(title: Text('Container Widget',style: TextStyle(color: Colors.white),),),
         body: MyHomePage(),
       ),
@@ -40,7 +77,7 @@ class MyHomePage extends StatelessWidget{
   }
 }
 
-
+*/
 
 /*
 import 'package:flutter/material.dart';
