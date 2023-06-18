@@ -1,4 +1,45 @@
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
+import 'package:flutter/rendering.dart';
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+final String title ="List View Title";
+
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      title: title,
+      home: HomePage(title: title),
+
+    );
+  }
+}
+/*
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context){
+    return ListView(
+
+    );
+  }
+
+}
+
+ */
+/*
+import 'package:flutter/material.dart';
 void main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
@@ -54,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
+*/
 /*
 import 'package:flutter/material.dart';
 void main()=>runApp(MyApp());
