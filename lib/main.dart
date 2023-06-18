@@ -10,6 +10,64 @@ class MyApp extends StatelessWidget{
         primarySwatch: Colors.cyan,
       ),
       home: Scaffold(
+        appBar: AppBar(title: Text('List View',style: TextStyle(color: Colors.white),),),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+ List list = [];
+
+  void initState(){
+    for(int i=0; i<=20; i++){
+      list.add(i);
+    }
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+    itemCount: list.length,
+      itemBuilder: (BuildContext, int index){
+      return ListTile(
+        title: Text ("List Number 00${list[index]}"),
+        leading: Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,color: Colors.blue,
+          ),
+        ),
+        trailing: Icon(Icons.arrow_back),
+      );
+      },
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: Scaffold(
         appBar: AppBar(title: Text('Column Widget',style: TextStyle(color: Colors.white),),),
         body: MyHomePage(),
       ),
@@ -85,7 +143,7 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-
+*/
 
 /*
 import 'package:flutter/material.dart';
