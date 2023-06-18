@@ -20,14 +20,67 @@ class MyApp extends StatelessWidget{
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return ListView(
+      children: [
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          leading: Container(
+            height: 20.0,
+            width: 20.0,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,color: Colors.red,
+            ),
+          ),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
 
-children: [
-  Text('Hello Bangladesh'),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
+        ListTile(
+          title: Text('Item One',style: TextStyle(fontSize: 20.0),),
+          trailing: Icon(Icons.arrow_back),
+        ),
 
-],
 
+      ],
     );
   }
 }
