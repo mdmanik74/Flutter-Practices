@@ -18,6 +18,63 @@ class MyApp extends StatelessWidget{
 }
 
 class MyHomePage extends StatefulWidget {
+
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  List<int> list = [];
+  @override
+  void initState() {
+    for (int i = 'A' as int; i <= 'Z;'; i++) {
+      list.add(i);
+    }
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      itemCount: list.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+      itemBuilder: (BuildContext cxt, int index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            color: Colors.redAccent,
+            alignment: Alignment.center,
+            child: Text('${list[index]}'),
+          ),
+        );
+      },
+    );
+  }
+}
+
+/*
+import 'package:flutter/material.dart';
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text('GridView Widget Example',style: TextStyle(color: Colors.white),),),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
   @override
@@ -76,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+*/
 
 /*
 import 'package:flutter/material.dart';
