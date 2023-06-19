@@ -1,26 +1,63 @@
 import 'package:flutter/material.dart';
-import 'HomePage.dart';
-import 'package:flutter/rendering.dart';
-
-
 void main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
-  static const String title="List View Widget";
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: title,
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
-      home: HomePage(title:title),
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Stack Widget Example',style: TextStyle(color: Colors.white),),),
+        body: MyHomePage(),
+      ),
     );
   }
 }
 
+class MyHomePage extends StatefulWidget {
 
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
 
+class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+body: Center(
+  child: Stack(
+    fit: StackFit.passthrough,
+    clipBehavior: Clip.hardEdge,
+    children: [
+      Container(
+        height: 300,
+        width: 400,
+        color: Colors.green,
+        child: Center(
+          child: Text('Top Green',style: TextStyle(color: Colors.white,fontSize: 20.0),),
+        ),
+      ),
+      Positioned(
+        top: 30,
+        right: 20,
+        child: Container(
+          height: 100,
+          width: 150,
+          color: Colors.black54,
+          child: Text('Middle Widget',style: TextStyle(color: Colors.white,fontSize: 20),),
+        ),
+      ),
+    ],
+  ),
+),
+    );
+  }
+}
 
 
 
