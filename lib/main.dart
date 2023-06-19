@@ -10,6 +10,86 @@ class MyApp extends StatelessWidget{
         primarySwatch: Colors.cyan,
       ),
       home: Scaffold(
+        appBar: AppBar(title: Text('GridView Widget Example',style: TextStyle(color: Colors.white),),),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      padding: EdgeInsets.all(20.0),
+      crossAxisCount: 4,
+    mainAxisSpacing: 10,
+      crossAxisSpacing: 15,
+      children: [
+        Container(
+          height: 200,
+          width: 200,
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: Text('Hello Bangladesh'),
+        ),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: Text('Hello Bangladesh'),
+        ),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: Text('Hello Bangladesh'),
+        ),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: Text('Hello Bangladesh'),
+        ),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: Text('Hello Bangladesh'),
+        ),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: Text('Hello Bangladesh'),
+        ),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: Text('Hello Bangladesh'),
+        ),
+
+      ],
+    );
+  }
+}
+
+
+/*
+import 'package:flutter/material.dart';
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: Scaffold(
         appBar: AppBar(title: Text('Stack Widget Example',style: TextStyle(color: Colors.white),),),
         body: MyHomePage(),
       ),
@@ -35,7 +115,7 @@ body: Center(
    height: 300,
    child: Stack(
      clipBehavior: Clip.none, fit: StackFit.expand,
-   
+
      children: [
        Container(
          height: 300,
@@ -69,7 +149,7 @@ body: Center(
   }
 }
 
-
+*/
 
 
 
