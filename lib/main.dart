@@ -30,30 +30,40 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
 body: Center(
-  child: Stack(
-    fit: StackFit.passthrough,
-    clipBehavior: Clip.hardEdge,
-    children: [
-      Container(
-        height: 300,
-        width: 400,
-        color: Colors.green,
-        child: Center(
-          child: Text('Top Green',style: TextStyle(color: Colors.white,fontSize: 20.0),),
-        ),
-      ),
-      Positioned(
-        top: 30,
-        right: 20,
-        child: Container(
-          height: 100,
-          width: 150,
-          color: Colors.black54,
-          child: Text('Middle Widget',style: TextStyle(color: Colors.white,fontSize: 20),),
-        ),
-      ),
-    ],
-  ),
+ child: SizedBox(
+   width: 300,
+   height: 300,
+   child: Stack(
+     clipBehavior: Clip.none, fit: StackFit.expand,
+   
+     children: [
+       Container(
+         height: 300,
+         width: 300,
+         color: Colors.red,
+       ),
+
+       Positioned(
+         top: 80,
+         right: 80,
+         child: Container(
+         width: 150,
+         height: 150,
+         color: Colors.black,
+       ),),
+       Positioned(
+         left: 20,
+         top: 20,
+         child: Container(
+           height: 200,
+           width: 200,
+           color: Colors.purple,
+         ),
+       )
+       
+     ],
+   ),
+ ),
 ),
     );
   }
