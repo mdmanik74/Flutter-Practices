@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'package:flutter/rendering.dart';
+
+
 void main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
-final String title ="List View Title";
-
+  static const String title="List View Widget";
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
-      ),
       title: title,
-      home: HomePage(title: title),
-
+      theme: ThemeData(primarySwatch: Colors.lightBlue),
+      home: HomePage(title:title),
     );
   }
 }
+
+
+
+
+
+
+
+
+
 /*
 class MyHomePage extends StatefulWidget {
 
