@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget{
         primarySwatch: Colors.cyan,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Text Widget',style: TextStyle(color: Colors.white),),),
+        appBar: AppBar(title: Text('Image Network',style: TextStyle(color: Colors.white),),),
         body: MyHomePage(),
       ),
     );
@@ -28,27 +28,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+        color:Colors.grey,
+      child: Image.asset('assets/images/1.jpg'), height: 500,
       alignment: Alignment.center,
-    width: 200,
-    height: 200,
-    color: Colors.green,
-    child: Text('Hi, This is Text Example',
-    textScaleFactor: 1.0,
-    
-      maxLines: 2,
-      style: TextStyle(
-        fontSize: 40.0,
-        fontWeight: FontWeight.bold,
-        wordSpacing: 2.0,
-          letterSpacing: 2.0,
-      ),
-    ),
-    );
 
+    );
   }
 }
-
-
 /*
 import 'package:flutter/material.dart';
 void main()=>runApp(MyApp());
