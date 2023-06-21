@@ -11,12 +11,14 @@ class MyApp extends StatelessWidget{
         primarySwatch: Colors.cyan,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Image Network',style: TextStyle(color: Colors.white),),),
+        appBar: AppBar(title: Text('Icon Widget',style: TextStyle(color: Colors.white),),),
         body: MyHomePage(),
       ),
     );
   }
 }
+
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -25,13 +27,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int volume=0;
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color:Colors.grey,
-      child: Image.asset('assets/images/1.jpg'), height: 500,
-      alignment: Alignment.center,
+    return Center(
+      child: Container(
+          color:Colors.white,
+        alignment: Alignment.center,
+        width: 300,
+        height: 300,
+        padding: EdgeInsets.only(top: 16),
+        child: Column(
+          children: [
+            Icon(Icons.volume_down,
+              size:50,color: Colors.redAccent,
 
+            ),
+     IconButton(onPressed: (){
+      print('One Presssed');
+      setState(() {
+        volume +=1;
+      });
+     }, icon: Icon(Icons.add,size: 50,)),
+            Text('$volume',style: TextStyle(fontSize: 30,),)
+          ],
+        ),
+      ),
     );
   }
 }
