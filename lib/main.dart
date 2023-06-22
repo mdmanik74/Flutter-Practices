@@ -32,17 +32,54 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.all(16),
+        alignment: Alignment.center,
+
         child: Column(
           children: [
-            ElevatedButton(onPressed: (){
-              print('On Pressed');
-            }, child: Text('Click Me')),
-            TextButton(onPressed: (){print('Ok');}, child: Text('Click Here')),
-            ElevatedButton.icon(onPressed: (){print('ok');}, icon:Icon(Icons.add), label: Text('People')),
-            IconButton(onPressed: (){print('Ok');}, icon:Icon(Icons.security)),
-            FloatingActionButton(onPressed: (){print('ok');}, child: Text('Ok'),)
-          ],
+            SizedBox(
+              height: 52,
+            ),
+            ElevatedButton.icon(onPressed: (){},
+              icon:Icon(Icons.download),
+              label: Text('Download'),
+            ),
+            ElevatedButton(onPressed: (){}, child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Downlaod'),
+                SizedBox(
+                  width: 50,
+                ),
+                Icon(Icons.download,size: 24.0,),
+              ],
+            )),
+
+            FloatingActionButton.extended(onPressed: (){},
+              label: Text('Here Download'),
+              backgroundColor: Colors.red,
+              icon: Icon(Icons.download,size: 24.0,),
+            ),
+
+            SizedBox.fromSize(
+              size: Size(56, 56),
+              child: ClipOval(
+                child: Material(
+                  color: Colors.amberAccent,
+                  child: InkWell(
+                    splashColor: Colors.green,
+                    onTap: () {},
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(Icons.shopping_cart), // <-- Icon
+                        Text("Buy"), // <-- Text
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+                     ],
         ),
       ),
 
