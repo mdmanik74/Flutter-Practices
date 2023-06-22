@@ -27,54 +27,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController username=TextEditingController();
-  TextEditingController password =TextEditingController();
   @override
-  void initState(){
-    username.text="";
-    password.text="";
-    super.initState();
-  }
+
   Widget build(BuildContext context) {
-    return Center(
+    return SingleChildScrollView(
       child: Container(
-padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(
-              controller: username,
-              decoration: InputDecoration(
-                labelText: 'UserName :',
-                prefixIcon: Icon(Icons.people),
-                border: myinputborder(),
-                enabledBorder: myinputborder(),
-                focusedBorder: myfocusborder(),
-              ),
-            ),
-            Container(height: 20,),
-            TextField(
-              controller: password,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.lock),
-                labelText: 'Password',
-                enabledBorder: myinputborder(),
-                focusedBorder: myfocusborder(),
-              ),
-            )
+            ElevatedButton(onPressed: (){
+              print('On Pressed');
+            }, child: Text('Click Me')),
+            TextButton(onPressed: (){print('Ok');}, child: Text('Click Here')),
+            ElevatedButton.icon(onPressed: (){print('ok');}, icon:Icon(Icons.add), label: Text('People')),
+            IconButton(onPressed: (){print('Ok');}, icon:Icon(Icons.security)),
+            FloatingActionButton(onPressed: (){print('ok');}, child: Text('Ok'),)
           ],
         ),
-
       ),
+
     );
   }
-  OutlineInputBorder myfocusborder(){
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.all((Radius.circular(20)),)
-    ),
-  }
 }
-
-
 /*
 import 'package:flutter/material.dart';
 
