@@ -1,3 +1,80 @@
+import 'package:flutter/material.dart';
+
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Text Field Widget',),backgroundColor: Colors.deepOrange,),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController username=TextEditingController();
+  TextEditingController password =TextEditingController();
+  @override
+  void initState(){
+    username.text="";
+    password.text="";
+    super.initState();
+  }
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            TextField(
+              controller: username,
+              decoration: InputDecoration(
+                labelText: 'UserName :',
+                prefixIcon: Icon(Icons.people),
+                border: myinputborder(),
+                enabledBorder: myinputborder(),
+                focusedBorder: myfocusborder(),
+              ),
+            ),
+            Container(height: 20,),
+            TextField(
+              controller: password,
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.lock),
+                labelText: 'Password',
+                enabledBorder: myinputborder(),
+                focusedBorder: myfocusborder(),
+              ),
+            )
+          ],
+        ),
+
+      ),
+    );
+  }
+  OutlineInputBorder myfocusborder(){
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.all((Radius.circular(20)),)
+    ),
+  }
+}
+
+
 /*
 import 'package:flutter/material.dart';
 
