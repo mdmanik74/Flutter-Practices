@@ -1,3 +1,71 @@
+/*
+import 'package:flutter/material.dart';
+
+void main()=>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Text Field Widget',style: TextStyle(color: Colors.white),),),
+        body: MyHomePage(),
+      ),
+    );
+  }
+}
+
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int volume = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Inter Your Name',
+                label: Text('Name :'),
+                labelStyle: TextStyle(
+                  color: Colors.redAccent,
+                  fontSize: 30.0,
+                ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
+                prefix: Icon(Icons.drive_file_rename_outline),
+                suffixIcon: Icon(Icons.remove_done),
+                errorText: 'Error',
+              ),
+              keyboardType: TextInputType.phone
+              ,
+            ),
+          ],
+        ),
+      ),
+
+    );
+  }
+
+}
+
+*/
+/*
 import 'package:flutter/material.dart';
 
 void main()=>runApp(MyApp());
@@ -56,6 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+ */
 /*
 import 'package:flutter/material.dart';
 void main()=>runApp(MyApp());
