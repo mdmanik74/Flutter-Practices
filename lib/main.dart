@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
-import 'CalculatorButton.dart';
 void main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget{
-  bool darkMode=false;
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.cyan,
       ),
       home: Scaffold(
-        backgroundColor: Color(0xFF28527a),
-        appBar: AppBar(title: Text('Flutter Calculator',style: TextStyle(color: Colors.white,),),backgroundColor: Colors.deepOrange,),
+        appBar: AppBar(title: Text('Snackbar Widget',style: TextStyle(color: Colors.white),),),
         body: MyHomePage(),
-
       ),
     );
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -31,26 +26,27 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+
   @override
-
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+body: Container(
+  
+  padding: EdgeInsets.all(60),
+  alignment: Alignment.center,
+  child: Column(children: [
+    ElevatedButton(onPressed: (){
+      ScaffoldMessenger.of(context).showSnackBar(
+       SnackBar(content: Text('Thanks for you ! Click Here',style: TextStyle(fontSize: 30.0,color: Colors.red),),
+         backgroundColor: Colors.black,
+         elevation: 16,
+       ),
+      );
+    },
+        child: Text('Show Simple Snackbar'),),
+  ],),
+),
 
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
-          children: const [
-            CalculatorButton(text:'9'),
-            CalculatorButton(text:'9'),
-            CalculatorButton(text:'9'),
-            CalculatorButton(text:'9'),
-
-
-        ],
-      ),
-        ],
-      ),
     );
   }
 }
