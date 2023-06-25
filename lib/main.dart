@@ -1,37 +1,26 @@
 import 'package:flutter/material.dart';
+void main()=>runApp(const MyApp());
 
-void main() {
-  runApp(const TabBarDemo());
-}
-
-class TabBarDemo extends StatelessWidget {
-  const TabBarDemo({super.key});
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: const TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
-              ],
-            ),
-            title: const Text('Tabs Demo'),
-          ),
-          body: const TabBarView(
-            children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
-            ],
-          ),
-        ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
       ),
+      home: Scaffold(
+        backgroundColor: const Color(0xffC4DFCB),
+        appBar: AppBar(
+        leading: const Icon(Icons.menu,color: Colors.black,),
+        title: Text('Flutter Custom Bottom',style: TextStyle(color:Theme.of(context).primaryColor,fontSize: 25,fontWeight: FontWeight.w600),),
+        centerTitle: true,
+          backgroundColor: Colors.white,
+        ),
+        ),
     );
   }
 }
+
