@@ -32,32 +32,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late var _valueC = 0;
-  void method(int value) {
-    setState(() {
-      _valueC = value;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Radio(
-          value: 1,
-          groupValue: _valueC,
-          onChanged: (value) {
-            print(value);
-          },
+    return Padding(
+      padding: const EdgeInsets.all(16.00),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.purple),
         ),
-        Radio(
-          value: 2,
-          groupValue: _valueC,
-          onChanged: (value) {
-            method(value!);
-          },
+        child: Column(
+          children: [
+            RadioListTile(
+                value: 1,
+                groupValue: 1,
+                onChanged: (value) {
+                  print(value);
+                }),
+            RadioListTile(
+                value: 2,
+                groupValue: 2,
+                onChanged: (value) {
+                  print(value);
+                }),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
