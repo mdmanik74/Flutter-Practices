@@ -32,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  double _valueN = 2.0;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -42,18 +43,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         child: Column(
           children: [
-            RadioListTile(
-                value: 1,
-                groupValue: 1,
-                onChanged: (value) {
-                  print(value);
-                }),
-            RadioListTile(
-                value: 2,
-                groupValue: 2,
-                onChanged: (value) {
-                  print(value);
-                }),
+            Slider(
+              value: _valueN,
+              min: 0.0,
+              max: 10.0,
+              onChanged: (value) {
+                setState(() {
+                  _valueN = value;
+                });
+              },
+              activeColor: Colors.red,
+              inactiveColor: Colors.amber,
+              divisions: 5,
+              label: 'Range',
+              
+            ),
+            Text('Range Value $_valueN')
           ],
         ),
       ),
