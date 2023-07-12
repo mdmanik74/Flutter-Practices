@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Radio Button Widget',
+            'Switch List Widget',
           ),
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: Colors.green,
         ),
         body: const MyHomePage(),
       ),
@@ -32,65 +32,66 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  double _valueN = 2.0;
+  bool _valueN = false;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.00),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.purple),
-        ),
-        child: Column(
-          children: [
-            Slider(
-              value: _valueN,
-              min: 0.0,
-              max: 10.0,
-              onChanged: (value) {
-                setState(() {
-                  _valueN = value;
-                });
-              },
-              activeColor: Colors.red,
-              inactiveColor: Colors.amber,
-              divisions: 5,
-              label: 'Range',
-              
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(16.00),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.purple),
+          ),
+          child: SwitchListTile(
+            value: _valueN,
+            onChanged: (value) {
+              setState(() {
+                _valueN = value;
+              });
+            },
+            title: const Text(
+              'Plese Selected Yes/No Option',
+              style: TextStyle(
+                  fontFamily: 'Dancing_Script', fontStyle: FontStyle.normal),
             ),
-            Text('Range Value $_valueN')
-          ],
+            secondary: const Icon(Icons.switch_right),
+            activeColor: Colors.red,
+            inactiveThumbColor: Colors.black,
+            selected: false,
+          ),
         ),
       ),
     );
   }
 }
 
-
-
 /*
 import 'package:flutter/material.dart';
 
-void main()=>runApp(MyApp());
+void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.cyan,
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text('CheckBoxList Widget',),backgroundColor: Colors.deepOrange,),
+        appBar: AppBar(
+          title: const Text(
+            'Switch Button Widget',
+          ),
+          backgroundColor: Colors.green,
+        ),
         body: const MyHomePage(),
       ),
     );
   }
 }
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -99,31 +100,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late bool _valueC=false;
+  bool _valueN = false;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: CheckboxListTile(
-      value: _valueC,
-      onChanged: (value) {
-        setState(() {
-          _valueC=value!;
-        });
-        print(value);
-      },
-      title: Text('Title'),
-      subtitle: Text('Subtitle'),
-      secondary: Container(child: Icon(Icons.favorite)),
-      activeColor: Colors.red,
-      checkColor: Colors.black,
-      selected: _valueC,
-      controlAffinity: ListTileControlAffinity.leading,
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(16.00),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.purple),
+          ),
+          child: Switch(
+            value: _valueN,
+            onChanged: (value) {
+              setState(() {
+                _valueN = value;
+              });
+            },
+            activeColor: Colors.red,
+            inactiveThumbColor: Colors.black,
+          ),
+        ),
       ),
     );
-  
   }
 }
-
 
 */
