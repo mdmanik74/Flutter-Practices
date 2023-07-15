@@ -30,15 +30,18 @@ class ProfileScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Container(
-        child: Center(
+      body: Column(
+        children: [
+          Center(
             child: ElevatedButton(
-          child: const Text('Please Click Here'),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const Page2()));
-          },
-        )),
+              child: const Text('Please Click Here'),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Page2()));
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
