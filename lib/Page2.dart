@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Page2 extends StatelessWidget {
-  const Page2({super.key});
+  const Page2({
+    Key? key,
+    required this.texts,
+  }) : super(key: key);
+  final String texts;
 
   @override
   Widget build(BuildContext context) {
@@ -9,29 +13,20 @@ class Page2 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Title of Page 2"),
       ),
-      body: const Center(
-        child: Text('Page 2'),
+      body: SizedBox(
+        height: 20,
+        child: Container(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Name: $texts'),
+              ],
+            ),
+          ),
+        ),
       ),
-      
       backgroundColor: Colors.lightGreen[100],
     );
   }
-}
-
-Widget v PageText() {
-  return Container(
-    height: 200,
-    width: 200,
-    decoration: const BoxDecoration(
-      borderRadius: BorderRadius.all(Radius.circular(15)),
-    ),
-    child: Column(children: const [
-      TextField(
-        decoration: InputDecoration(
-            hintText: 'Enter Your Name',
-            labelText: 'User Name',
-            labelStyle: TextStyle(color: Colors.orange, fontSize: 14)),
-      )
-    ]),
-  );
 }

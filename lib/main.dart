@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'Page2.dart';
 
 void main() => runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.cyan,
       ),
-      home: ProfileScreen(),
+      home: const ProfileScreen(),
     );
   }
 }
@@ -36,8 +37,12 @@ class ProfileScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Please Click Here'),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Page2()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Page2(
+                              texts: 'hlw',
+                            )));
               },
             ),
           ),
