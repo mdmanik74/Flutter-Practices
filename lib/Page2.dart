@@ -1,13 +1,9 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 
 class Page2 extends StatelessWidget {
-   Page2({
-    Key? key
-  }) : super(key: key);
-   String texts='';
-get texts => ModalRoute.of(context as BuildContext)?.settings.arguments as String;
+  const Page2({Key? key, required this.texts}) : super(key: key);
+  final String texts;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +25,5 @@ get texts => ModalRoute.of(context as BuildContext)?.settings.arguments as Strin
       ),
       backgroundColor: Colors.lightGreen[100],
     );
-  }
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(StringProperty('texts', texts));
   }
 }

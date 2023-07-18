@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
       ),
       home: const ProfileScreen(),
-      routes: Page2:(contex)=>Page2(),
     );
   }
 }
@@ -45,7 +44,8 @@ class ProfileScreen extends StatelessWidget {
                               texts: 'hlw',
                             )));
                             */
-                Navigator.of(context).pushNamed('/Page2',arguments: 'hlw');
+
+                            Navigator.of(context).pushReplacementNamed(MaterialPageRoute(builder: (context)=>const Page2(texts: 'Ji'),) as String,);
               },
             ),
           ),
