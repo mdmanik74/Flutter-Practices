@@ -31,6 +31,58 @@ class ProfileScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
+      body: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.only(top: 80),
+        child: Column(children: [
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (_) => const Page2()));
+              },
+              child: const Text('Back To Main Page'))
+        ]),
+      ),
+    );
+  }
+}
+
+
+
+/*
+import 'package:flutter/material.dart';
+
+import 'Page2.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: const ProfileScreen(),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Flutter Profile Example',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
       body: Column(
         children: [
           Center(
@@ -55,7 +107,7 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-
+*/
 /*
 import 'package:flutter/material.dart';
 
