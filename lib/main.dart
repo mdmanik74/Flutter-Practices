@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-
-import 'Page2.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.cyan,
@@ -19,29 +24,83 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  // ignore: prefer_typing_uninitialized_variables
+  var controller;
+  @override
+  void initState() {
+    controller = PageController(
+      viewportFraction: 0.8,
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Flutter Profile Example',
-          style: TextStyle(color: Colors.white),
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 80),
+        child: PageView(
+          controller: controller,
+          children: [
+            Container(
+              child: Image.asset('/assets/images/1.jpg'),
+              color: Colors.red,
+              child: const Center(
+                child: Text('Page 01'),
+              ),
+            ),
+            Container(
+              color: Colors.indigo,
+              child: const Center(
+                child: Text('Page 02'),
+              ),
+            ),
+            Container(
+              color: Colors.green,
+              child: const Center(
+                child: Text('Page 03'),
+              ),
+            ),
+            Container(
+              color: Colors.yellow,
+              child: const Center(
+                child: Text('Page 04'),
+              ),
+            ),
+          ],
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.only(top: 80),
-        child: Column(children: [
-          ElevatedButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => const Page2()));
-              },
-              child: const Text('Back To Main Page'))
-        ]),
+      bottomSheet: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        height: 80,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextButton(
+                onPressed: () => controller.jumpToPage(2),
+                child: const Text('SKIP')),
+            Flexible(
+              child: SmoothPageIndicator(
+                controller: controller,
+                count: 3,
+                effect: const WormEffect(),
+              ),
+            ),
+            TextButton(
+                onPressed: () => controller.nextPage(
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOut),
+                child: const Text('NEXT')),
+          ],
+        ),
       ),
     );
   }
