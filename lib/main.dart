@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:intro_screen_onboarding_flutter/introduction.dart';
+import 'package:intro_screen_onboarding_flutter/introscreenonboarding.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,6 +18,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'DancingSript',
         primarySwatch: Colors.cyan,
       ),
       home: const ProfileScreen(),
@@ -32,77 +34,26 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  // ignore: prefer_typing_uninitialized_variables
-  var controller;
-  @override
-  void initState() {
-    controller = PageController(
-      viewportFraction: 0.8,
-    );
-    super.initState();
-  }
+  final List<Introduction> list = [
+    Introduction(
+      imageUrl: 'assets/images/1.jpg',
+      subTitle: 'Pick Up delivery at your door and enjoy',
+      title: 'ON Page',
+    ),
+    Introduction(
+      imageUrl: 'assets/images/1.jpg',
+      subTitle: 'Pick Up delivery at your door and enjoy',
+      title: 'ON Page',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(bottom: 80),
-        child: PageView(
-          controller: controller,
-          children: [
-            Container(
-              child: Image.asset('/assets/images/1.jpg'),
-              color: Colors.red,
-              child: const Center(
-                child: Text('Page 01'),
-              ),
-            ),
-            Container(
-              color: Colors.indigo,
-              child: const Center(
-                child: Text('Page 02'),
-              ),
-            ),
-            Container(
-              color: Colors.green,
-              child: const Center(
-                child: Text('Page 03'),
-              ),
-            ),
-            Container(
-              color: Colors.yellow,
-              child: const Center(
-                child: Text('Page 04'),
-              ),
-            ),
-          ],
-        ),
-      ),
-      bottomSheet: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        height: 80,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(
-                onPressed: () => controller.jumpToPage(2),
-                child: const Text('SKIP')),
-            Flexible(
-              child: SmoothPageIndicator(
-                controller: controller,
-                count: 3,
-                effect: const WormEffect(),
-              ),
-            ),
-            TextButton(
-                onPressed: () => controller.nextPage(
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOut),
-                child: const Text('NEXT')),
-          ],
-        ),
-      ),
-    );
+        body: IntroScreenOnboarding(
+      backgroudColor: Colors.red,
+      introductionList: list,
+    ));
   }
 }
 
