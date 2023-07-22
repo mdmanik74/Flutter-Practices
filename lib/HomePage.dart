@@ -1,3 +1,4 @@
+import 'package:codes/Coffee_Type.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -60,11 +61,25 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(
           height: 25,
         ),
+        SizedBox(
+          height: 50,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const [
+              CoffeeType(coffeeType: 'Latte', isSelected: true),
+              CoffeeType(coffeeType: 'Black', isSelected: false),
+              CoffeeType(coffeeType: 'Coffee', isSelected: false),
+              CoffeeType(coffeeType: 'Milk Coffee', isSelected: false),
+              CoffeeType(coffeeType: 'Latte', isSelected: false),
+              CoffeeType(coffeeType: 'New', isSelected: false),
+            ],
+          ),
+        ),
         Expanded(
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: [
-               const CoffePage(),
+            children: const [
+              CoffePage(),
             ],
           ),
         ),

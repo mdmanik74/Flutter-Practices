@@ -18,14 +18,34 @@ class _CoffePageState extends State<CoffePage> {
           borderRadius: BorderRadius.circular(12),
           color: Colors.black54,
         ),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset('assets/images/coffee01.png'),
           ),
           const Text(
-            'White coffee Cafe Coffee cup, coffee, simple, logo, decorat',
+            'White Cafe Coffee',
             style: TextStyle(fontSize: 20),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  '\$4.00',
+                  style: TextStyle(fontSize: 20),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: const Icon(Icons.add),
+                )
+              ],
+            ),
           ),
         ]),
       ),
