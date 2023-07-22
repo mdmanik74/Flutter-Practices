@@ -80,6 +80,9 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.horizontal,
             children: const [
               CoffePage(),
+              CoffePage(),
+              CoffePage(),
+              CoffePage(),
             ],
           ),
         ),
