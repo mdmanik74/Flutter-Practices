@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:codes/constants.dart';
-import 'package:codes/home_screen.dart';
+import 'package:codes/Pages/constants.dart';
+import 'package:codes/Pages/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

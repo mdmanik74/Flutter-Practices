@@ -1,4 +1,4 @@
-import 'package:codes/constants.dart';
+import 'package:codes/Pages/constants.dart';
 import 'package:flutter/material.dart';
 
 class CategPage extends StatefulWidget {
