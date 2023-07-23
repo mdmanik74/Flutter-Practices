@@ -1,9 +1,9 @@
-
-/*
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+import 'home_screen.dart';
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
                 child: Container(
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                    color: kblue,
+                    color: Colors.blue,
                     borderRadius:
                         BorderRadius.only(bottomRight: Radius.circular(50)),
                   ),
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
             Expanded(
                 flex: 2,
                 child: Container(
-                  color: kblue,
+                  color: Colors.blue,
                   child: Container(
                     width: double.infinity,
                     decoration: const BoxDecoration(
@@ -41,17 +41,17 @@ class HomePage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(children: [
-                        Text(
+                        const Text(
                           "Learning Everything",
                           style: TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Text(
+                        const Text(
                           'Learn with pleasure with \n us, where you are !',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                               fontSize: 16,
                               fontWeight: FontWeight.w500),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -68,14 +68,14 @@ class HomePage extends StatelessWidget {
                               height: 60,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15.0)),
-                              color: kpink,
+                              color: Colors.pink,
                               onPressed: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => HomeScreen()));
                               },
-                              child: Text(
+                              child: const Text(
                                 "Get Started",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -95,4 +95,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-*/
