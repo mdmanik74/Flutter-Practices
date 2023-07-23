@@ -1,6 +1,8 @@
 import 'package:codes/constants.dart';
 import 'package:flutter/material.dart';
 
+import 'categories_page.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -123,6 +125,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               )),
+          const SizedBox(
+            height: 20,
+          ),
+          CategPage(),
         ],
       )),
     );
