@@ -9,6 +9,54 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List catNames = [
+    'Category',
+    'Classes',
+    'Free Course',
+    'BookStore',
+    'Live Course',
+    'LeaderBoard',
+  ];
+  List<Color> catColors = [
+    const Color(0xFFFFCF2F),
+    const Color(0xFF6FE08D),
+    const Color(0xFF61BDFD),
+    const Color(0xFFFC7F7F),
+    const Color(0xFFCB84FB),
+    const Color(0xFF78E667),
+  ];
+  List<Icon> catIcons = [
+    const Icon(
+      Icons.category,
+      color: Colors.white,
+      size: 30,
+    ),
+    const Icon(
+      Icons.video_library,
+      color: Colors.white,
+      size: 30,
+    ),
+    const Icon(
+      Icons.assessment,
+      color: Colors.white,
+      size: 30,
+    ),
+    const Icon(
+      Icons.store,
+      color: Colors.white,
+      size: 30,
+    ),
+    const Icon(
+      Icons.play_circle_fill,
+      color: Colors.white,
+      size: 30,
+    ),
+    const Icon(
+      Icons.emoji_events,
+      color: Colors.white,
+      size: 30,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +122,37 @@ class _HomeScreenState extends State<HomeScreen> {
                         size: 25,
                       )),
                 ),
+              )
+            ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
+            child: Column(children: [
+              GridView.builder(
+                itemCount: catNames.length,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  childAspectRatio: 1.1,
+                ),
+                itemBuilder: (BuildContext context, index) {
+                  return Column(
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          color: catColors[index],
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: catIcons[index],
+                        ),
+                      )
+                    ],
+                  );
+                },
               )
             ]),
           )
