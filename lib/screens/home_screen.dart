@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'ux',
     'programming',
   ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -230,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               imgList[index],
                               style: const TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w600),
-                            )
+                            ),
                           ]),
                         ),
                       ),
