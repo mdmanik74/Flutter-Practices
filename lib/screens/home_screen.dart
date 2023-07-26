@@ -216,6 +216,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: 100,
                               ),
                             ),
+                            SizedBox(height: 10),
+                            Text(
+                              imgList[index],
+                              style: const TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.w600),
+                            )
                           ]),
                         ),
                       ),
@@ -226,6 +232,20 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
+        bottomNavigationBar: BottomNavigationBar(
+            showUnselectedLabels: true,
+            iconSize: 32,
+            selectedItemColor: const Color.fromARGB(255, 250, 123, 5),
+            selectedFontSize: 18,
+            unselectedItemColor: Colors.grey,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.assignment), label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite), label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Home'),
+            ]),
       ),
     );
   }
