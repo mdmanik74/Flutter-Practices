@@ -58,10 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
   ];
   List imgList = [
-    'Flutter',
-    'React Native',
-    'Python',
-    'C#',
+    'finance',
+    'graphics',
+    'ux',
+    'programming',
   ];
   @override
   Widget build(BuildContext context) {
@@ -193,19 +193,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 4,
-                      mainAxisExtent: 10,
-                      crossAxisSpacing: 10),
+                    crossAxisCount: 2,
+                    childAspectRatio: (2 / 1),
+                    mainAxisExtent: 200,
+                  ),
                   itemBuilder: (BuildContext context, index) {
                     return InkWell(
                       onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 243, 219, 5),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromARGB(255, 233, 232, 243),
+                          ),
+                          child: Column(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Image.asset(
+                                "assets/images/${imgList[index]}.png",
+                                height: 100,
+                                width: 100,
+                              ),
+                            ),
+                          ]),
                         ),
                       ),
                     );
