@@ -1,4 +1,5 @@
 import 'package:codes/constants.dart';
+import 'package:codes/screens/course_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -199,7 +200,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   itemBuilder: (BuildContext context, index) {
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CourseScreen(
+                                imgList[index],
+                              ),
+                            ));
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(5),
                         child: Container(
@@ -216,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: 100,
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(
                               imgList[index],
                               style: const TextStyle(
