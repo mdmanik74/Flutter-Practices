@@ -1,3 +1,5 @@
+import 'package:codes/screens/description_screen.dart';
+import 'package:codes/screens/video_screen.dart';
 import 'package:flutter/material.dart';
 
 class CourseScreen extends StatefulWidget {
@@ -141,6 +143,10 @@ class _CourseScreenState extends State<CourseScreen> {
               ],
             ),
           ),
+          const SizedBox(
+            height: 10,
+          ),
+          isVideoselection ? const VideoScreen() : const DescriptionScreen(),
         ]),
       ),
     );
