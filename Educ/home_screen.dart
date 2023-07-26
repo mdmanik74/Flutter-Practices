@@ -1,5 +1,4 @@
-import 'package:codes/constants.dart';
-import 'package:codes/screens/course_screen.dart';
+/*
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -260,3 +259,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+*/
