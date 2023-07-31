@@ -1,4 +1,4 @@
-import 'package:codes/welcome_page.dart';
+import 'package:codes/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: WelcomeScreen(),
+      home: const LoginPage(),
     );
   }
 }

@@ -96,11 +96,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             TextStyle(fontSize: 22, color: Color(0xFF363f93)),
                       ),
                       Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color(0xFF363f93),
+                              color: const Color(0xFF363f93),
                               borderRadius: BorderRadius.circular(50)),
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_forward,
                             color: Colors.white,
                           ))
