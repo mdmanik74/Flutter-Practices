@@ -18,8 +18,22 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 30,
             ),
+            Stack(children: [
+              CircleAvatar(
+                radius: 70,
+                backgroundColor: Colors.black,
+                child: Container(
+                    padding: const EdgeInsets.all(2),
+                    child: const CircleAvatar(
+                      radius: 70,
+                      backgroundImage: AssetImage("assets/images/profile.png"),
+                      backgroundColor: Colors.white,
+                      //
+                    )),
+              ),
+            ]),
             const Text(
-              'Hello Agin',
+              'Hello Again',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
@@ -63,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: const Padding(
                   padding: EdgeInsets.only(left: 15),
                   child: TextField(
+                      obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Enter Your Password",
@@ -73,6 +88,42 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Padding(
+                  padding: EdgeInsets.all(15),
+                  child: Center(
+                    child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text("Not a member ?",
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                Text(
+                  "Register now",
+                  style: TextStyle(
+                      color: Colors.blue, fontWeight: FontWeight.bold),
+                ),
+              ],
+            )
           ]),
         ),
       ),
